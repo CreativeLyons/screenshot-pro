@@ -70,7 +70,7 @@ extension ElementStyle {
             s.lineThickness = max(settings.editorLineThickness, 3)
             s.shadow = false
         case .marker:
-            // A broad, faint highlighter pen; snapped to text it takes the line's height.
+            // A broad, faint highlighter pen.
             s.lineThickness = 16
             s.lineColor = Palette.yellow
             s.shadow = false

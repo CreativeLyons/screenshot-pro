@@ -87,7 +87,7 @@ enum EditorTool: String, CaseIterable, Sendable {
         case .text: return "Click and type, or drag a box to wrap text. Command-Return confirms, Esc cancels."
         case .speechBubble: return "Drag a box, then type. Command-Return confirms, Esc cancels."
         case .counter: return "Click to place the next number."
-        case .highlight: return "Drag over text like a highlighter: the mark lines up with the text. Shift draws straight."
+        case .highlight: return "Drag to highlight. Shift draws a straight line."
         case .blur: return "Drag over the area to blur it."
         case .pixelate: return "Drag over the area to pixelate it."
         case .crop: return "Drag the area to keep. Return applies, Esc cancels."

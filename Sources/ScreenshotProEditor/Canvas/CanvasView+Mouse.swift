@@ -201,16 +201,6 @@ extension CanvasView {
         case .freehand(let id, _):
             let name = document.element(id).map { "Add \($0.type.displayName)" } ?? "Draw"
             session.updateGesture { doc in doc.update(id) { $0.points = ElementGeometry.smoothed($0.points) } }
-            if let e = document.element(id), e.type == .marker,
-               let snapped = MarkerSnap.snap(e.points, width: CGFloat(e.style.lineThickness), image: document.image,
-                                             seed: e.id) {
-                session.updateGesture { doc in
-                    doc.update(id) { el in
-                        el.points = snapped.points
-                        el.style.lineThickness = Double(snapped.thickness)
-                    }
-                }
-            }
             session.endGesture(name: name)
         case .placingCounter:
             session.endGesture(name: "Add Counter")
